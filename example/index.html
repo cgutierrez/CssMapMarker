@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+   	<meta charset="utf-8">
+   	<title>CSS Driven Markers With Google Maps</title>
+   	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div id="map_canvas">&nbsp;</div>
+
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="CssMapMarker-min.js"></script>
+
+	<script type="text/javascript">
+	var initPos = new google.maps.LatLng(38, -97);
+
+	var opt = { 
+		zoom: 4, 
+		mapTypeId: google.maps.MapTypeId.ROADMAP, 
+		center: initPos, 
+		mapTypeControl: false,
+		navigationControl: true, 
+		navigationControlOptions: { 
+			style: google.maps.NavigationControlStyle.SMALL, 
+			position: google.maps.ControlPosition.TOP_LEFT 
+		}
+	};
+
+	var map = new google.maps.Map(document.getElementById("map_canvas"), opt);
+
+	var mapMarker = new google.maps.Marker({ position: new google.maps.LatLng(33.65, -84.42), map: map, visible: false });
+	var cssMarker = new CssMapMarker({ id: 'test_marker', 
+										innerHTML: '<span>test</span>',
+										className: 'markerclass',
+										marker: mapMarker, 
+										map: map, 
+										onDrawn: function() {  },
+										onAdded: function() {  }
+									});
+
+	google.maps.event.addListener(cssMarker, 'click', (function(cssMarker) {
+		return function() {
+			alert('marker clicked');
+		}
+	})(cssMarker));
+	</script>
+</body>
+</html>
