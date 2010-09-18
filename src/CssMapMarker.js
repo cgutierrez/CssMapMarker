@@ -1,6 +1,8 @@
 /**
  * CssMapMarker.js - CSS Driven Markers With Google Maps 
  *
+ * http://github.com/cgutierrez/CssMapMarker
+ *
  * Copyright (c) 2010 Chris Gutierrez
  *
  * Permission is hereby granted, free of charge, to any person obtaining
