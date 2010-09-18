@@ -1,0 +1,12 @@
+The CssMapMarker object supports the following options.
+
+Required:
+map - the map to which the css marker should be added
+marker - the marker to which the css marker should be bound
+
+Optional:
+id - The element id to be used on the marker
+innerHTML - HTML to append to the marker
+className - the class name to use on the marker. (default: cssmapmarker)
+onDrawn - callback function for when the css marker is drawn
+onAdded - callback function for when the css marker is added to the map
